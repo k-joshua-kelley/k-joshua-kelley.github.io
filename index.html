@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio • Your Name</title>
+  <meta name="description" content="Minimal portfolio with tabs for Programming and Physical/CAD projects." />
+  <style>
+    /* —— CSS Variables —— */
+    :root{
+      --bg: #ffffff;
+      --text: #0f172a; /* slate-900 */
+      --muted: #64748b; /* slate-500 */
+      --line: #e2e8f0; /* slate-200 */
+      --card: #f8fafc; /* slate-50 */
+      --accent: #0ea5e9; /* sky-500 */
+      --radius: 16px;
+      --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
+      --maxw: 1100px;
+      --gap: 1rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg: #0b1020;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --line: #1f2937;
+        --card: #0f172a;
+        --accent: #38bdf8;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+      }
+    }
+
+    /* —— Base —— */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0; font: 400 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg); color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; border-radius: calc(var(--radius) - 8px); }
+
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 80px; }
+
+    header{
+      display: grid; gap: .5rem; align-items: start; margin-bottom: 20px;
+    }
+    .title{ font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -.02em; }
+    .subtitle{ color: var(--muted); font-size: 14px; }
+
+    /* —— Top Nav / Links —— */
+    .top-actions{
+      display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; margin-top: 6px;
+    }
+    .chip{
+      border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; font-size: 13px; color: var(--muted);
+    }
+    .chip:hover{ border-color: var(--accent); color: var(--accent); }
+
+    /* —— Tabs —— */
+    .tabs{ margin-top: 18px; border-bottom: 1px solid var(--line); }
+    [role="tablist"]{ display: flex; gap: .25rem; }
+    [role="tab"]{
+      appearance: none; border: 0; background: transparent; color: var(--muted);
+      padding: 12px 14px; border-radius: 10px 10px 0 0; font: inherit; cursor: pointer; position: relative;
+    }
+    [role="tab"][aria-selected="true"]{ color: var(--text); }
+    [role="tab"][aria-selected="true"]::after{
+      content: ""; position: absolute; left: 8px; right: 8px; bottom: -1px; height: 2px; background: var(--accent);
+    }
+    [role="tabpanel"]{ padding: 24px 0 0; }
+    [hidden]{ display: none !important; }
+
+    /* —— Featured Section —— */
+    .featured{
+      display: grid; gap: var(--gap); grid-template-columns: 1fr; margin: 18px 0 8px;
+    }
+    @media (min-width: 720px){
+      .featured{ grid-template-columns: 1.2fr 1fr; }
+    }
+    .feature-card{
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr; gap: 0;
+    }
+    .feature-media{ background: linear-gradient(180deg, rgba(2,132,199,.08), transparent 60%); padding: 14px; }
+    .feature-body{ padding: 16px; display: grid; gap: 10px; }
+    .eyebrow{ font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .f-title{ font-size: 20px; font-weight: 600; }
+    .meta{ display: flex; gap: .5rem; flex-wrap: wrap; }
+    .tag{ font-size: 12px; padding: 4px 8px; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; }
+    .cta{ display: inline-flex; align-items: center; gap: .4rem; font-weight: 500; }
+    .cta::after{ content: '↗'; font-size: 14px; }
+
+    /* —— Project Grid —— */
+    .grid{ display: grid; gap: var(--gap); grid-template-columns: 1fr; }
+    @media (min-width: 640px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 980px){ .grid{ grid-template-columns: repeat(3, 1fr); } }
+
+    .card{
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 14px; display: grid; gap: 10px; transition: transform .2s ease;
+    }
+    .card:hover{ transform: translateY(-2px); }
+    .card h3{ font-size: 16px; margin: 0; }
+    .card p{ margin: 0; color: var(--muted); font-size: 14px; }
+    .card .links{ display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 4px; }
+
+    /* —— Footer —— */
+    footer{ margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
+    /* —— Print —— */
+    @media print{
+      .chip, [role="tablist"] { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">Your Name</div>
+      <div class="subtitle">Engineer • Programmer • Designer</div>
+      <nav class="top-actions" aria-label="Quick links">
+        <a class="chip" href="https://github.com/your-username" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a class="chip" href="mailto:you@example.com">Email</a>
+        <a class="chip" href="#cv">CV</a>
+      </nav>
+
+      <div class="tabs">
+        <div role="tablist" aria-label="Project categories">
+          <button role="tab" aria-selected="true" aria-controls="panel-programming" id="tab-programming">Programming</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-physical" id="tab-physical">Physical / CAD</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- —— Featured / Highlighted Projects —— -->
+    <section aria-label="Highlighted projects" class="featured">
+      <article class="feature-card">
+        <div class="feature-media">
+          <!-- Replace with an image or GIF of your project -->
+          <img src="https://placehold.co/1200x600/png" alt="Preview of Featured Project A" />
+        </div>
+        <div class="feature-body">
+          <div class="eyebrow">Featured</div>
+          <h2 class="f-title">Featured Project A</h2>
+          <p>A concise one-liner describing what it does and why it matters. Aim for ~12–18 words.</p>
+          <div class="meta">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Open Source</span>
+          </div>
+          <div class="links">
+            <a class="cta" href="#">Repository</a>
+            <a class="cta" href="#">Live Demo</a>
+            <a class="cta" href="#">Write‑up</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-media">
+          <img src="https://placehold.co/1200x600/png" alt="Preview of Featured Project B" />
+        </div>
+        <div class="feature-body">
+          <div class="eyebrow">Featured</div>
+          <h2 class="f-title">Featured Project B</h2>
+          <p>Another highlight, ideally from a different domain (e.g., CAD, hardware, or research prototype).</p>
+          <div class="meta">
+            <span class="tag">Fusion 360</span>
+            <span class="tag">3D Print</span>
+            <span class="tag">Prototype</span>
+          </div>
+          <div class="links">
+            <a class="cta" href="#">Gallery</a>
+            <a class="cta" href="#">Source Files</a>
+            <a class="cta" href="#">Notes</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- —— Tabs: Programming —— -->
+    <section id="panel-programming" role="tabpanel" aria-labelledby="tab-programming">
+      <div class="grid">
+        <!-- Card -->
+        <article class="card">
+          <h3>Project Name</h3>
+          <p>Short description: what it is, who it’s for, and one cool result.</p>
+          <div class="meta">
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+          </div>
+          <div class="links">
+            <a class="cta" href="#">Repo</a>
+            <a class="cta" href="#">Docs</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>CLI Tool</h3>
+          <p>Tiny utility that saves time by automating a repetitive task.</p>
+          <div class="meta">
+            <span class="tag">Rust</span>
+            <span class="tag">Utility</span>
+          </div>
+          <div class="links">
+            <a class="cta" href="#">Repo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Visualization App</h3>
+          <p>Interactive charts for exploring datasets. Built with a minimalist stack.</p>
+          <div class="meta">
+            <span class="tag">D3</span>
+            <span class="tag">Web</span>
+          </div>
+          <div class="links">
+            <a class="cta" href="#">Repo</a>
+            <a class="cta" href="#">Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- —— Tabs: Physical / CAD —— -->
+    <section id="panel-physical" role="tabpanel" aria-labelledby="tab-physical" hidden>
+      <div class="grid">
+        <article class="card">
+          <h3>Mechanical Fixture</h3>
+          <p>Lightweight clamp designed for easy print and assembly; tested to 30 kg load.</p>
+          <div class="meta">
+            <span class="tag">CAD</span>
+            <span class="tag">FFF</span>
+          </div>
+          <div class="links">
+            <a class="cta" href="#">Gallery</a>
+            <a class="cta" href="#">STLs</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Parametric Enclosure</h3>
+          <p>Laser‑cut enclosure with parametric joints and snap‑fit features.</p>
+          <div class="meta">
+            <span class="tag">Fusion 360</span>
+            <span class="tag">DXF</span>
+          </div>
+          <div class="links">
+            <a class="cta" href="#">Files</a>
+            <a class="cta" href="#">Build Log</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Assembly Jig</h3>
+          <p>Reduces assembly time by 40% with an ergonomic, tool‑less design.</p>
+          <div class="meta">
+            <span class="tag">Jig</span>
+            <span class="tag">Shop‑made</span>
+          </div>
+          <div class="links">
+            <a class="cta" href="#">Gallery</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Your Name. Built with semantic HTML, no frameworks, and love.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Accessible Tabs with hash support
+    (function(){
+      const tablist = document.querySelector('[role="tablist"]');
+      const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+      const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+
+      function activate(id){
+        tabs.forEach(t => {
+          const selected = t.id === `tab-${id}`;
+          t.setAttribute('aria-selected', String(selected));
+          t.tabIndex = selected ? 0 : -1;
+        });
+        panels.forEach(p => {
+          const show = p.id === `panel-${id}`;
+          p.hidden = !show;
+        });
+      }
+
+      // Click
+      tabs.forEach(t => t.addEventListener('click', () => {
+        const id = t.id.replace('tab-','');
+        history.replaceState(null, '', `#${id}`);
+        activate(id);
+      }));
+
+      // Keyboard
+      tablist.addEventListener('keydown', (e) => {
+        const i = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+        if (e.key === 'ArrowRight') { tabs[(i+1)%tabs.length].click(); }
+        if (e.key === 'ArrowLeft') { tabs[(i-1+tabs.length)%tabs.length].click(); }
+      });
+
+      // Initial from hash
+      const hash = location.hash.replace('#','');
+      if (hash && document.getElementById(`tab-${hash}`)) activate(hash);
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <noscript>
+    <style>
+      /* Progressive enhancement: show both panels if JS disabled */
+      #panel-physical{ display: block !important; }
+      [hidden]{ display: block !important; }
+      [role="tablist"]{ display:none !important; }
+    </style>
+  </noscript>
+</body>
+</html>
