@@ -53,34 +53,6 @@ header{
   margin-right: 1rem;
 }
 
-/* —— Top Nav / Links —— */
-.top-actions{
-  display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; margin-top: 6px;
-}
-
-.chip {
-  border: 1px solid var(--line);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem; /* space between icon and text */
-  padding: 0.4rem 0.8rem;
-  border-radius: 1.2rem;
-  background: var(--bg);
-  text-decoration: none;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 500;
-  transition: background 0.2s ease;
-}
-.chip:hover{
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.chip-icon {
-  width: 1.2rem;
-  height: 1.2rem;
-}
-
 /* —— Tabs —— */
 .tabs{ margin-top: 18px; border-bottom: 1px solid var(--line); }
 [role="tablist"]{ display: flex; gap: .25rem; }
