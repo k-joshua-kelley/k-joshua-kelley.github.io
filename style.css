@@ -59,6 +59,7 @@ header{
 }
 
 .chip {
+  border: 1px solid var(--line);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem; /* space between icon and text */
@@ -67,6 +68,7 @@ header{
   background: var(--bg);
   text-decoration: none;
   color: var(--muted);
+  font-size: 13px;
   font-weight: 500;
   transition: background 0.2s ease;
 }
