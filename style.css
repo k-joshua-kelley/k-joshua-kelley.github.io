@@ -88,23 +88,31 @@ header{
     grid-template-columns: 1.2fr 1fr;
   }
 }
-.feature-card{
-  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-  box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr; gap: 0; height: 100%;
+
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+
+  display: flex;              /* change to flex */
+  flex-direction: column;     /* stack media + body vertically */
+  height: 100%;
 }
 
 .feature-media {
   background: linear-gradient(180deg, rgba(2,132,199,.08), transparent 60%);
   padding: 14px;
-  flex-shrink: 0;            /* prevents media section from compressing */
+  flex-shrink: 0;             /* now actually works */
 }
 
 .feature-body {
-  padding: 16px;             /* fixed horizontal spacing */
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;                 /* vertical spacing stays consistent */
-  flex-grow: 1;               /* fills remaining card height if needed */
+  gap: 10px;
+  flex-grow: 1;               /* fills remaining space */
 }
 
 .eyebrow{ font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
