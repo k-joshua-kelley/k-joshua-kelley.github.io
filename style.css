@@ -68,6 +68,13 @@ header{
 [hidden]{ display: none !important; }
 
 /* —— Featured Section —— */
+.card-link {
+  display: block;   /* ensures it can grow like a div */
+  height: 100%;     /* fills parent if you want equal height cards */
+  text-decoration: none;
+  color: inherit;
+}
+
 .featured {
   display: grid;
   gap: var(--gap);
