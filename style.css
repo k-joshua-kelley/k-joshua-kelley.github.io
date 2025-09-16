@@ -88,11 +88,9 @@ header{
     grid-template-columns: 1.2fr 1fr;
   }
 }
-
-.feature-card {
-  display: flex;             /* flex instead of nested grid */
-  flex-direction: column;    
-  height: 100%;              /* fill parent height */
+.feature-card{
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr; gap: 0; height: 100%;
 }
 
 .feature-media {
