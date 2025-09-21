@@ -104,7 +104,7 @@ header{
 .feature-media {
   background: linear-gradient(180deg, rgba(2,132,199,.08), transparent 60%);
   padding: 14px;
-  border-radius: calc(var(--radius) - 14px);
+  border-radius: calc(var(--radius) - 7px);
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -115,7 +115,16 @@ header{
   height: auto;
   border: 0;
   display: block;
-  border-radius: calc(var(--radius) - 14px);
+  border-radius: calc(var(--radius) - 7px);
+}
+
+.feature-media video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  display: block;
+  border-radius: calc(var(--radius) - 7px);
 }
 
 .feature-body {
