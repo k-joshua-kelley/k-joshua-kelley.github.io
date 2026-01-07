@@ -23,6 +23,12 @@
   }
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  color: #333;
+}
+
 /* —— Base —— */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
