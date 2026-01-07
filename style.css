@@ -136,14 +136,14 @@ header{
 
 .eyebrow{ font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .f-title{ font-size: 20px; font-weight: 600; }
-  .f-title.chip:hover{
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-  .f-title.chip-icon {
-    width: 1.2rem;
-    height: 1.2rem;
-  }
+.f-title:hover{
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.f-title .link-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
 .meta{ display: flex; gap: .5rem; flex-wrap: wrap; }
 .tag{ font-size: 12px; padding: 4px 8px; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; }
 .cta{ display: inline-flex; align-items: center; gap: .4rem; font-weight: 500; }
