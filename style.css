@@ -23,12 +23,6 @@
   }
 }
 
-.icon {
-  width: 1em;
-  height: 1em;
-  color: #333;
-}
-
 /* —— Base —— */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -167,17 +161,4 @@ footer{ margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); 
 /* —— Print —— */
 @media print{
   .chip, [role="tablist"] { display: none !important; }
-}
-
-.link-icon {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-  opacity: 0.6;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.project-card:hover .link-icon {
-  transform: translateX(3px);
-  opacity: 1;
 }
