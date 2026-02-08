@@ -33,4 +33,4 @@ I modeled all basic LEGO plates and bricks using SOLIDWORKS design tables, enabl
 
 ## Assembly Instructions
 
-Final assembly instructions with a bill of materials can be accessed here:
+Final assembly instructions with a bill of materials can be accessed here: [Assembly Instructions]()
