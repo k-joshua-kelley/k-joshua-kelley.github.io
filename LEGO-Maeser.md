@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 hyperlink: LEGO-Maeser
 title: LEGO Maeser
 ---
