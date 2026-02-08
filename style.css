@@ -40,12 +40,6 @@
   color: var(--accent);
 }
 
-.project-wrap {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 16px 60px;
-}
-
 .project-title {
   margin: 8px 0 16px;
   font-size: clamp(24px, 4vw, 32px);
