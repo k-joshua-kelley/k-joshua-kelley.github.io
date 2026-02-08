@@ -1,4 +1,7 @@
 ---
+layout: default
+hyperlink: LEGO-Maeser
+title: LEGO Maeser
 ---
 # LEGO BYU Maeser Building Assembly
 
