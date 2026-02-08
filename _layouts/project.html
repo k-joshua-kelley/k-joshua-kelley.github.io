@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <!-- Simple top bar -->
+  <nav class="project-nav">
+    <a href="/" class="home-btn">← Home</a>
+  </nav>
+
+  <!-- Constrained content column -->
+  <main class="project-wrap">
+    <article class="project-content">
+      {{ content }}
+    </article>
+  </main>
+
+</body>
+</html>
