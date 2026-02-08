@@ -22,6 +22,51 @@
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
   }
 }
+/* —— Project Page —— */
+
+.project-nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px 16px 8px;
+}
+
+.home-btn {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.home-btn:hover {
+  color: var(--accent);
+}
+
+.project-wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 16px 60px;
+}
+
+.project-title {
+  margin: 8px 0 16px;
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+.project-content {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+/* Make normal markdown feel nice */
+.project-content p {
+  margin: 0 0 12px;
+}
+
+.project-content img {
+  margin: 12px 0;
+}
 
 /* —— Base —— */
 * { box-sizing: border-box; }
