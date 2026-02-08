@@ -27,13 +27,28 @@
 .project-nav {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 20px 16px 8px;
+  padding: 20px 16px 0;
 }
 
 .home-btn {
-  font-size: 14px;
   color: var(--muted);
   text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  /* This controls clickable size */
+  padding: 0.6rem 0.8rem;
+
+  /* Optional */
+  border-radius: 6px;
+}
+/* Make figure responsive */
+.project-content figure {
+  max-width: 800px;
+  margin: 0 auto;          /* remove default vertical margins */
+  padding: 0 10px;         /* optional, if you don’t want extra space */
 }
 
 .home-btn:hover {
@@ -53,6 +68,8 @@
   padding: 16px;
 }
 
+.project-wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0px 20px 80px; }
+
 /* Make normal markdown feel nice */
 .project-content p {
   margin: 0 0 12px;
@@ -61,6 +78,25 @@
 .project-content img {
   margin: 12px 0;
 }
+
+.home-btn .home-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  vertical-align: middle;
+}
+
+.inline-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: middle;
+}
+
+.inline-icon a:hover{
+  text-decoration: underline;
+}
+
+.project-content a {color: var(--accent);}
+.project-content a:hover {text-decoration: underline;}
 
 /* —— Base —— */
 * { box-sizing: border-box; }
@@ -182,16 +218,43 @@ header{
 .f-title .link-icon {
   width: 1.2rem;
   height: 1.2rem;
+  vertical-align: middle;
 }
-.meta{ display: flex; gap: .5rem; flex-wrap: wrap; }
-.tag{ font-size: 12px; padding: 4px 8px; border: 1px solid var(--line); color: var(--muted); border-radius: 999px; }
+.meta {
+  display: flex;
+  flex-wrap: wrap;      /* allow tags to wrap if needed */
+  gap: 0.25rem;         /* spacing between tags */
+  align-items: center;  /* vertically center all tags */
+}
+.tag {
+  font-size: 12px;
+  line-height: 2;
+  padding: 4px 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  vertical-align: middle;
+
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 999px;
+}
 .cta{ display: inline-flex; align-items: center; gap: .4rem; font-weight: 500; }
 .cta::after{ content: '↗'; font-size: 14px; }
 
 /* —— Project Grid —— */
 .grid{ display: grid; gap: var(--gap); grid-template-columns: 1fr; }
-@media (min-width: 640px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 980px){ .grid{ grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 640px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+  .project-content figure {
+    padding: 0 50px;         /* optional, if you don’t want extra space */
+  }
+}
+@media (min-width: 980px){
+  .grid{ grid-template-columns: repeat(3, 1fr); }
+}
 
 .card{
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);

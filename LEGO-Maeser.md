@@ -3,7 +3,7 @@ layout: project
 hyperlink: LEGO-Maeser
 title: LEGO Maeser
 ---
-# LEGO BYU Maeser Building Assembly
+# LEGO BYU Maeser Building
 
 **Objective**: Design a LEGO abstraction of the BYU Maeser Building that represents its key architectural elements while adhering to LEGO system constraints.
 
@@ -38,4 +38,5 @@ I modeled all basic LEGO plates and bricks using SOLIDWORKS design tables, enabl
 
 ## Assembly Instructions
 
-Final assembly instructions with a bill of materials can be accessed here: [Assembly Instructions](assets/LEGO_Maeser_Assembly_Instructions.pdf)
+Final assembly instructions with a bill of materials were created as a SOLIDWORKS Drawing and can be accessed here: 
+<a href="assets/LEGO_Maeser_Assembly_Instructions.pdf"> <svg class="inline-icon" aria-hidden="true"><use href="#icon-pdf"></use></svg>Assembly Instructions</a>
