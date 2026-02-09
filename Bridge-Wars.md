@@ -26,6 +26,15 @@ I came up with the idea of a game where players build "bridges" by stacking over
 I developed the rules for gameplay first, striving to keep them as few and simple as possible. The full game rules can be viewed here: 
 <a href="assets/PDFs/Bridge-Wars-Rules.pdf"> <svg class="inline-icon" aria-hidden="true"><use href="#icon-pdf"></use></svg>Bridge Wars Rules</a>
 
+<div class="feature-media">
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/RaaJ51OsLo8?autoplay=1&loop=1&playlist=RaaJ51OsLo8&mute=1" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
+</div>
+
 ## Board Design
 
 The primary design challenge for this game was figuring out how to support overhanging blocks.
